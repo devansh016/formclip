@@ -1,0 +1,20 @@
+{
+  "name": "static-clip",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.10",
+    "multer": "^1.4.3",
+    "nodemailer": "^6.7.0",
+    "randomatic": "^3.1.1"
+  }
+}
