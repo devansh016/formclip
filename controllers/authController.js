@@ -4,7 +4,7 @@ var randomize = require('randomatic');
 require("dotenv").config();
 
 async function register(req, res, next) {
-  const { email } = req.params;
+  const { email } = req.body;
   if (await userModel.findOne({ email })) {
     res.status(403).send({ response: 'Email id' + email + ' is already in use' });
   }
