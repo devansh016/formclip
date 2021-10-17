@@ -13,7 +13,7 @@ async function sendSubmissionEmail({sitename , submission, emailReceiver }) {
   const html = `<div>` + JSON.stringify(submission) + `</div>`;
 
   let info = await transporter.sendMail({
-    "from": "Devansh Chaudhary <devanshchaudhary2002@gmail.com>",
+    "from": "Form Clip <hello@formclip.xyz>",
     "to": emailReceiver, 
     "subject": "New Submission on Site " + sitename,
     "html": html,

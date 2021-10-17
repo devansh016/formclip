@@ -18,4 +18,4 @@ const authRoute = require("./routes/authRoute");
 app.use('/auth',authRoute);
 
 app.listen(port);
-console.log("running")
+console.log("App running on port " + port);
