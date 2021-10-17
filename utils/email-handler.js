@@ -8,7 +8,8 @@ async function sendSubmissionEmail({sitename , submission, emailReceiver }) {
     auth: {
       user: process.env.email_user,
       pass: process.env.email_pass
-    }
+    },
+    tls: {rejectUnauthorized: false}
   });
   const html = `<div>` + JSON.stringify(submission) + `</div>`;
 
@@ -45,7 +46,7 @@ async function sendAccessKey({ accessKey, emailReceiver }) {
   `</span></td></tr></tbody></table></center></td></tr></table></center>`;
   
   let info = await transporter.sendMail({
-    "from": "Devansh Chaudhary <devanshchaudhary2002@gmail.com>",
+    "from": "Form Clip <hello@formclip.xyz",
     "to": emailReceiver, 
     "subject": "Welcome to FormClip!",
     "html": html,

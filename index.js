@@ -1,5 +1,5 @@
 const express = require("express");
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 5500;
 var multer = require('multer');
 require("./utils/database");
 var forms = multer();
