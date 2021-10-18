@@ -15,7 +15,7 @@ async function sendData(req, res, next) {
         });
         user.totalSubmission = user.totalSubmission + 1;
         await user.save();
-        res.redirect(req.header.referer).send();
+        res.redirect(req.headers.referer).send();
     }
     else { 
         res.status(404).send();
