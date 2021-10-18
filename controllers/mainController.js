@@ -9,11 +9,13 @@ async function sendData(req, res, next) {
     user = await userModel.findOne({ "accessKey": accessKey });
     if (user) {
         emailHandler.sendSubmissionEmail({ 
-            sitename: req.headers.host,
+            sitename: req.headers.origin,
             submission: obj,
             emailReceiver: "<"+user.email+">"
         });
-        res.status(200).send();
+        user.totalSubmission = user.totalSubmission + 1;
+        await user.save();
+        res.redirect(req.header.referer).send();
     }
     else { 
         res.status(404).send();

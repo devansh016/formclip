@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
   email: { type: String, unique: true, required: true },
   accessKey: { type: String, unique: true, required: true },
+  totalSubmission: { type: Number, unique: true, required: true, default: 0},
   createdDate: { type: Date, default: Date.now },
 });
 
