@@ -3,6 +3,7 @@ const emailHandler = require('../utils/email-handler.js');
 require("dotenv").config();
 
 async function sendData(req, res, next) {
+    console.log(req);
     const accessKey = req.params.accessKey;
     const obj = JSON.parse(JSON.stringify(req.body));
     user = await userModel.findOne({ "accessKey": accessKey });
