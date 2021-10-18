@@ -2,7 +2,7 @@ const express = require("express");
 const mainController = require("../controllers/mainController");
 const router = express.Router();
 
-router.post("/:accessKey", saveformdata);
+router.post("/form/:accessKey", saveformdata);
 
 function saveformdata(req, res, next) {
   mainController
