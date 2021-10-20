@@ -6,12 +6,12 @@ require("./utils/database");
 var forms = multer();
 const app = express();
 
-var corsOptions = {
-	origin: 'https://formclip.xyz',
-	optionsSuccessStatus: 200
-}
+// var corsOptions = {
+// 	origin: 'https://formclip.xyz',
+// 	optionsSuccessStatus: 200
+// }
 
-app.use(cors(corsOptions))
+app.use(cors())
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: false }))
 app.use(forms.array()); 
