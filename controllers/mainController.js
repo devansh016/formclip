@@ -3,7 +3,6 @@ const emailHandler = require('../utils/email-handler.js');
 require("dotenv").config();
 
 async function sendData(req, res, next) {
-    console.log(req);
     const accessKey = req.params.accessKey;
     const obj = JSON.parse(JSON.stringify(req.body));
     user = await userModel.findOne({ "accessKey": accessKey });
@@ -14,8 +13,14 @@ async function sendData(req, res, next) {
             emailReceiver: "<"+user.email+">"
         });
         user.totalSubmission = user.totalSubmission + 1;
+
+        user.formResponses.push({
+            reponse: JSON.stringify(obj),
+            sitename: req.headers.origin
+        });
         await user.save();
         res.redirect(req.headers.referer).send();
+        
     }
     else { 
         res.status(404).send();
