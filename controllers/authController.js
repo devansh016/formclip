@@ -6,7 +6,7 @@ require("dotenv").config();
 async function registerUser(req, res, next) {
 	const { email } = req.body;
 	if (await userModel.findOne({ email })) {
-		res.status(403).send({ response: 'Email id' + email + ' is already in use' });
+		res.status(403).send({message: 'Email id ' + email + ' is already in use.' });
 	}
 	else { 
 		accessKey = randomize('Aa0', 20);
@@ -19,7 +19,7 @@ async function registerUser(req, res, next) {
 			"emailReceiver": "<"+email+">"
 		});
 		await user.save();
-		res.status(200).send({response: "AccessKey send on Email."});
+		res.status(200).send({message: "AccessKey send on your email."});
 	}
 }
 
