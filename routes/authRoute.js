@@ -6,7 +6,7 @@ router.post("/register", register);
 
 function register(req, res, next) {
   authController
-    .register(req, res, next)
+    .registerUser(req, res, next)
     .then((data) => {})
     .catch((err) => next(err));
 }

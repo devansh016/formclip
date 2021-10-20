@@ -6,7 +6,7 @@ router.post("/form/:accessKey", saveformdata);
 
 function saveformdata(req, res, next) {
   mainController
-    .sendData(req, res, next)
+    .saveformResponse(req, res, next)
     .then((data) => {})
     .catch((err) => next(err));
 }
