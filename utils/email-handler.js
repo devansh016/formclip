@@ -44,15 +44,16 @@ async function sendAccessKey({ accessKey, emailReceiver }) {
     tls: {rejectUnauthorized: false}
   });
   const text = `
-  Hi there,
+Hi there,
 
-  Thanks for signing up with FormClip. Once you setup form on your website, you'll get updates whenever a user submit the form.
-  Below is your accessKey:\n
-  `+ accessKey + `\n
-  If you have any questions, just reply to this email—we're always happy to help out.
+Thanks for signing up with FormClip. Once you setup form on your website, you'll get updates whenever a user submit the form.
+Below is your accessKey:\n
+`+ accessKey + `\n
+You can visit https://docs.formclip.xyz/ if you need help to integrate you website.
+If you have any questions, just reply to this email—we're always happy to help out.
   
-  Thanks,
-  The FormClip Team`;
+Thanks,
+The FormClip Team`;
 
   let info = await transporter.sendMail({
     "from": "Form Clip <hello@formclip.xyz",
