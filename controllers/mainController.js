@@ -20,7 +20,8 @@ async function saveformResponse(req, res, next) {
             sitename: req.headers.origin
         });
         await user.save();
-        res.redirect(req.headers.referer).send();
+        // res.redirect(req.headers.referer).send();
+        res.status(200).send();
     }
     else { 
         res.status(404).send();
