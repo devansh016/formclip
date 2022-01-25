@@ -5,11 +5,6 @@ const userSchema = new Schema({
   email: { type: String, unique: true, required: true },
   accessKey: { type: String, unique: true, required: true },
   totalSubmission: { type: Number, default: 0},
-  formResponses: [{
-    reponse: { type: String},
-    sitename: { type: String},
-    createdDate: { type: Date, default: Date.now }
-  }],
   createdDate: { type: Date, default: Date.now },
 });
 

@@ -13,12 +13,8 @@ async function saveformResponse(req, res, next) {
             submission: obj,
             emailReceiver: "<"+user.email+">"
         });
-        //Saving reponse in database
+        //Saving totsl number of reponse in database
         user.totalSubmission = user.totalSubmission + 1;
-        user.formResponses.push({
-            reponse: JSON.stringify(obj),
-            sitename: req.headers.origin
-        });
         await user.save();
         if(req.headers.referer){
             res.status(200).redirect(req.headers.referer).send();
