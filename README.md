@@ -1,6 +1,32 @@
 # Formclip
 Get form submissions directly in your inbox without any hassle. Its completely free!
 
+# Workflow
+![Form Clip@1 25x](https://user-images.githubusercontent.com/58871818/150633417-2a9e761f-9fb8-4854-a968-fa402ab4f329.png)
+
+## Running Locally
+
+Make sure you have [Node.js](http://nodejs.org/) installed.
+Also create the .env file and add environment variables as mentioned below.
+
+```sh
+git clone git@github.com:Form-clip/formclip-backend.git
+npm install
+npm start
+```
+
+## Environment Variable Required
+
+```sh
+MONGODB_URL = 
+email_host = 
+email_port = 
+email_user = 
+email_pass = 
+```
+
+Your app should now be running on [localhost](http://localhost/) at port 80.
+
 # What is FormClip?
 Formclip is a easy way to save responses from your website via forms without a server. Formclip  is build on the premise that form responses from static sites should not be requiring a backend server and should be free. We want to profit our users, not to profit from them.
 
