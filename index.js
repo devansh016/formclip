@@ -24,5 +24,8 @@ app.use(mainRoute);
 const authRoute = require("./routes/authRoute");
 app.use('/auth',authRoute);
 
+// Serve static file
+app.use(express.static('public'))
+
 app.listen(port);
 console.log("App running on port " + port);
