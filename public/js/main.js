@@ -1,4 +1,4 @@
-baseURL  = "https://api.formclip.xyz";
+baseURL  = "https://formclip.xyz";
 
 function isEmailValid(email){
 	let emailPattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
